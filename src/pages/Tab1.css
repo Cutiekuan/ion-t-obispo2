@@ -1,0 +1,11 @@
+#present-alert, #open-action-sheet {
+    width: 95%;
+    margin: 5px auto;
+}
+
+#profile_pic {
+    width: 125px;
+    margin-top: -40px;
+    margin-bottom: -15px;
+    margin-left: 7px;
+}

@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .counter-container {
+    margin-bottom: 20px;
+  }
+  
+  .counter-label {
+    font-size: 24px;
+  }
+  
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* You can add more styling as needed */
+  
