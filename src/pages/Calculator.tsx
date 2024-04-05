@@ -1,7 +1,7 @@
 // Calculator.tsx
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonInput } from '@ionic/react';
-import './Tab3.css';
+import './Calculator.css';
 
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>('');

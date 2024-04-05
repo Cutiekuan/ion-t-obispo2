@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonLabel } from '@ionic/react';
-import './Tab2.css';
+import './Click_counter.css';
 
-const Tab2: React.FC = () => {
+const Click_counter: React.FC = () => {
   const [count, setCount] = useState(0);
 
   const incrementCounter = () => {
@@ -37,4 +37,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Click_counter;
