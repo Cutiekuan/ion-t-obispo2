@@ -5,73 +5,66 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonList,
-  IonItem,
-  IonAvatar,
-  IonTextarea,
-  IonButton,
   IonIcon,
-  IonFooter,
-  IonText,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
 } from '@ionic/react';
-import { camera, videocam, images, notifications, chatbubbles, person } from 'ionicons/icons';
-import './Home.css';
+import { pulseOutline, calculatorOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const history = useHistory();
+
+  const goToClickCounter = () => {
+    history.push('/click_counter');
+  };
+
+  const goToCalculator = () => {
+    history.push('/calculator');
+  };
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
+        <IonToolbar>
           <IonTitle>Home</IonTitle>
-          <IonButton color="light" slot="end">
-            <IonIcon icon={chatbubbles} />
-          </IonButton>
-          <IonButton color="light" slot="end">
-            <IonIcon icon={notifications} />
-          </IonButton>
-          <IonButton color="light" slot="end">
-            <IonIcon icon={person} />
-          </IonButton>
         </IonToolbar>
+        <hr />
       </IonHeader>
-      <IonContent fullscreen>
-        {/* Post Section */}
-        <IonList>
-          {/* Post Status */}
-          <IonItem>
-            <IonAvatar slot="start">
-              <img alt="Silhouette of mountains" src="../src/assets/img/PROFPIC_AILEEN_PNG.png" />
-            </IonAvatar>
-            <IonTextarea autoGrow placeholder="What's on your mind?" />
-          </IonItem>
-          {/* End Post Status */}
-
-          {/* Add more posts here */}
-
-        </IonList>
-
-        {/* Photos, Videos, and Reels Section */}
-        <IonFooter>
-          <IonToolbar color="primary">
-            <IonButton color="light" slot="start">
-              <IonIcon icon={camera} />
-              <IonText>Photos</IonText>
-            </IonButton>
-            <IonButton color="light" slot="start">
-              <IonIcon icon={videocam} />
-              <IonText>Videos</IonText>
-            </IonButton>
-            <IonButton color="light" slot="start">
-              <IonIcon icon={images} />
-              <IonText>Reels</IonText>
-            </IonButton>
-          </IonToolbar>
-        </IonFooter>
-
-        <img alt="Silhouette of mountains" src="../src/assets/img/PROFPIC_AILEEN_PNG.png" />
+      <IonContent fullscreen className="ion-padding">
+        <div className="ion-text-center"> {/* Centering content */}
+          <IonCard onClick={goToClickCounter} style={{ width: '350px', cursor: 'pointer' }} color="primary">
+            <IonCardContent style={{ fontSize: '30px' }}>
+              <IonIcon icon={pulseOutline} slot="start" />
+              Click Counter
+            </IonCardContent>
+          </IonCard>
+  
+  
+          <IonCard onClick={goToCalculator} style={{ width: '350px', cursor: 'pointer' }} color="primary">
+            <IonCardContent style={{ fontSize: '30px' }}>
+              <IonIcon icon={calculatorOutline} slot="start" />
+              Calculator
+            </IonCardContent>
+          </IonCard>
+          
+          <IonCard style={{ width: '350px' }} color="primary">
+            <IonCardContent style={{ fontSize: '30px' }}>
+              Blank
+            </IonCardContent>
+          </IonCard>
+  
+          <IonCard style={{ width: '350px' }} color="primary">
+            <IonCardContent style={{ fontSize: '30px' }}>
+              Blank
+            </IonCardContent>
+          </IonCard>
+        </div>
       </IonContent>
     </IonPage>
   );
+  
 };
 
 export default Home;
