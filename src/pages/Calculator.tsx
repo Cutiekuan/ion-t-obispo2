@@ -1,6 +1,6 @@
-// Calculator.tsx
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonInput } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonBackButton, IonButtons, IonInput } from '@ionic/react';
+
 import './Calculator.css';
 
 const Calculator: React.FC = () => {
@@ -25,32 +25,32 @@ const Calculator: React.FC = () => {
       setInput('Error');
     }
   };
-
+  
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Calculator</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'dark' }}>
-        <IonGrid>
-          <IonRow>
-            <IonCol size="12">
-              <IonInput style={{ fontSize: '50px' }} value={input} readonly={true} className="ion-text-right" />
-            </IonCol>
-          </IonRow>
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Calculator</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        
+        <IonButtons slot="start">
+          <IonBackButton defaultHref="/" />
+        </IonButtons>
+        <IonContent fullscreen className="ion-padding" style={{ backgroundColor: 'dark' }}>
+          <IonGrid>
+            <IonRow>
+              <IonCol size="12">
+                <IonInput style={{ fontSize: '50px' }} value={input} readonly={true} className="ion-text-right" />
+              </IonCol>
+            </IonRow>
 
           <IonRow>
-            <IonCol size="4.5">
+            <IonCol size="6">
               <IonButton id="btns" expand="full" color="warning" onClick={handleClear}>C</IonButton>
             </IonCol>
-            {/* <IonCol size="6"></IonCol> */}
-            <IonCol size="4.5">
+            <IonCol size="6">
               <IonButton id="btns" expand="full" color="danger" onClick={handleDelete}>DEL</IonButton>
-            </IonCol>
-            <IonCol size="3">
-              <IonButton id="btns" expand="full" color="dark" onClick={() => handleInput('/')}>/</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -64,7 +64,7 @@ const Calculator: React.FC = () => {
               <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('9')}>9</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="dark" onClick={() => handleInput('*')}>*</IonButton>
+              <IonButton id="btns" expand="full" color="tertiary" onClick={() => handleInput('/')}>/</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -78,7 +78,7 @@ const Calculator: React.FC = () => {
               <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('6')}>6</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="dark" onClick={() => handleInput('-')}>-</IonButton>
+              <IonButton id="btns" expand="full" color="tertiary" onClick={() => handleInput('*')}>*</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -92,7 +92,7 @@ const Calculator: React.FC = () => {
               <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('3')}>3</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="dark" onClick={() => handleInput('+')}>+</IonButton>
+              <IonButton id="btns" expand="full" color="tertiary" onClick={() => handleInput('-')}>-</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -106,6 +106,11 @@ const Calculator: React.FC = () => {
               <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('00')}>00</IonButton>
             </IonCol>
             <IonCol size="3">
+              <IonButton id="btns" expand="full" color="tertiary" onClick={() => handleInput('+')}>+</IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol size="12">
               <IonButton id="btns" expand="full" color="success" onClick={handleCalculate}>=</IonButton>
             </IonCol>
           </IonRow>
