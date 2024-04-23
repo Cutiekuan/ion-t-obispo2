@@ -11,7 +11,7 @@ import {
   IonCardHeader,
   IonCardTitle,
 } from '@ionic/react';
-import { pulseOutline, calculatorOutline } from 'ionicons/icons';
+import { pulseOutline, calculatorOutline, listOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -24,6 +24,11 @@ const Home: React.FC = () => {
   const goToCalculator = () => {
     history.push('/calculator');
   };
+  
+  const goToTodolist = () => {
+    history.push('/todolist');
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -48,6 +53,13 @@ const Home: React.FC = () => {
               Calculator
             </IonCardContent>
           </IonCard>
+
+          <IonCard onClick={goToTodolist} style={{ width: '350px', cursor: 'pointer' }} color="primary">
+            <IonCardContent style={{ fontSize: '30px' }}>
+              <IonIcon icon={listOutline} slot="start" />
+              Todolist
+            </IonCardContent>
+          </IonCard>
           
           <IonCard style={{ width: '350px' }} color="primary">
             <IonCardContent style={{ fontSize: '30px' }}>
@@ -55,11 +67,7 @@ const Home: React.FC = () => {
             </IonCardContent>
           </IonCard>
   
-          <IonCard style={{ width: '350px' }} color="primary">
-            <IonCardContent style={{ fontSize: '30px' }}>
-              Blank
-            </IonCardContent>
-          </IonCard>
+          
         </div>
       </IonContent>
     </IonPage>
