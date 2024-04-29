@@ -54,7 +54,7 @@ const cardData = [
     link: '/todolist'
   },
   {
-    title: '',
+    title: 'Quotes Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
     link: '/quotesgenerator'
