@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import {
-  // IonBackButton,
-  // IonButton,
-  // IonButtons,
+  IonBackButton,
+  IonButton,
+  IonButtons,
   IonCard,
-  // IonCardContent,
+  IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
@@ -13,26 +13,24 @@ import {
   IonGrid,
   IonHeader,
   IonIcon,
-  // IonInput,
-  // IonItem,
-  // IonLabel,
-  // IonList,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
   IonPage,
   IonRow,
   IonTitle,
   IonToolbar,
-  // IonItemDivider,
-  IonSearchbar
+  IonItemDivider,
+  IonSearchbar,
+  IonBadge
 } from '@ionic/react';
 
 //Custom CSS
 import './Home.css';
 
 //Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble} from 'ionicons/icons';
-
-//Additional Routes
-// import Click_counter from './Click_counter';
+import { speedometerOutline,calculator,pencil, chatbubble, readerOutline, logoIonic,logoFirebase, logoReact} from 'ionicons/icons';
 
 const cardData = [
   {
@@ -58,9 +56,20 @@ const cardData = [
     icon: chatbubble,
     subtitle: 'Applet #4',
     link: '/quotesgenerator'
+  },
+  {
+    title: 'Notes',
+    icon: readerOutline,
+    subtitle: 'Applet #5',
+    link: '/notes',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact, 
+      tag3: logoFirebase 
+    }
   }
-  
-];
+
+  ];
 
   const Home: React.FC = () => {
 
@@ -82,10 +91,10 @@ const cardData = [
           </IonHeader>
         {/*Dynamic Search*/}
         <>
-          <IonSearchbar 
+          {/* <IonSearchbar 
             value={searchTerm} 
             onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
-          />
+          /> */}
           
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
